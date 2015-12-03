@@ -2,10 +2,10 @@ A simple script made to act like salt / ancible to run a single command on multi
 
 <strong>Usage:</strong> <code>macsalt.sh all "whoami" -s</code>
 
-<strong>Output:</strong<br>
-soc1 - SUDO
-<strong>root</strong>
-soc2 - SUDO
-<strong>root</strong>
-soc3 - SUDO
+<strong>Output:</strong><br>
+soc1 - SUDO<br>
+<strong>root</strong><br>
+soc2 - SUDO<br>
+<strong>root</strong><br>
+soc3 - SUDO<br>
 <strong>root</strong>
