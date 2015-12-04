@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# gitcommit.sh
+# Written by Ron Egli
+# github.com/smugzombie
+
+timestamp=$(date +%s)
+
 echo "Which project do you wish to commit?"
 list=$(ls -l | grep "^d" | awk {'print $9'} | sed '/^\s*$/d')
 count=0
@@ -15,20 +23,21 @@ read selection
 mySelection=${Option[$selection]}
 
 if [ -z $mySelection ]; then
-	echo "Invalid Selection"
-	echo "Closing"
-	exit
+        echo "Invalid Selection"
+        echo "Closing"
+        exit
 else
-	echo "Committing "$mySelection
-	cd $mySelection
+        echo "Committing "$mySelection
+        cd $mySelection
 
-	git add *
+        git add *
 
-	git status | grep deleted | while read -r line ; do
-    		output=$(echo $line | awk {'print $2'})
-    		git rm $output
-	done
+        git status | grep deleted | while read -r line ; do
+                output=$(echo $line | awk {'print $2'})
+                git rm $output
+        done
 
-	git commit -m "auto-$timestamp"
-	git push -u origin master
+        git commit -m "auto-$timestamp"
+        git push -u origin master
 fi
+
