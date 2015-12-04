@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# autocommit.sh
+# Written by Ron Egli
+# github.com/smugzombie
+
 #Variables
 timestamp=$(date +%s)
 
