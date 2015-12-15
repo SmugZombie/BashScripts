@@ -1,0 +1,54 @@
+#!/usr/bin/php
+# Smugzombie
+# Encryption
+# github.com/smugzombie
+
+<?php
+$encryptionMethod = "AES-256-CBC";
+
+// Ask how this works
+$mode = $argv[1];
+if($mode == "encrypt" || $mode == "decrypt"){
+	// Proceed
+}
+else{
+	while($mode != "encrypt" || $mode != "decrypt"){
+		$mode = prompt("Decrypt or Encrypt: (Blank for Encrypt)");
+		if(!$mode || $mode == "encrypt"){ $mode = "encrypt"; break; }
+		elseif ($mode == "decrypt") { break; }
+	}
+}
+
+// Read Secret
+$secret = $argv[2];
+if($secret){
+
+}else{
+	$line = prompt("Enter Secret: (Blank for default)");
+	$secret = $line;
+	if(!$line){ $secret = "25c6c7ff35b9979b151f2136cd13b0ff"; }
+}
+
+// Read Password
+$password = $argv[3];
+while(!$password){
+	$password = prompt("Enter Password:");
+}
+
+// Do the stuff
+if($mode == "decrypt"){
+	$output = @openssl_decrypt($password, $encryptionMethod, $secret);
+}else{
+	$output = @openssl_encrypt($password, $encryptionMethod, $secret);
+}
+
+// Output the goods
+echo "Output: $output \n";
+
+// Make the functions
+function prompt($message){
+	echo $message."\n";
+	if (PHP_OS == 'WINNT') { echo '$ '; $line = stream_get_line(STDIN, 1024, PHP_EOL); } 
+	else { $line = readline('$ '); }
+	return $line;
+}
