@@ -42,7 +42,7 @@ if [ -z "$host" ] || [ -z "$command" ]; then
 	exit
 fi
 
-hosts=( "soc1" "soc2" "soc3" "soc4" "soc5" "socserver" )
+hosts=( "mac","mac1","mac19" )
 
 function runCommand {
 	host=$1
