@@ -1,0 +1,11 @@
+
+DEBUG = 1 # Can be predefined while testing, or filled from an argument passed to the script
+
+function DEBUG {
+        if [ "$DEBUG" == "1" ]; then
+                message=$1
+                echo -e "DEBUG: $message"
+        fi
+}
+
+DEBUG "Hello World"
