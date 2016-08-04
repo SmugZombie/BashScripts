@@ -18,4 +18,5 @@ filename=$(basename $0)
 
 # Create an alias for git and point it to this script.
 # alias git=$scriptRoot"gitBlocker.sh"
+# To create a global alias add it here: /etc/profile.d/00-aliases.sh
 # Warning: This does not disable git if the full git path is used.
