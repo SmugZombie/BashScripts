@@ -2,7 +2,7 @@
 # fancontrol.sh v0.1
 # github.com/smugzombie
 # To be run via minute cron to update the laptops fan speed if not functioning properly on its own
-# Requires: https://github.com/lavoiesl/osx-cpu-temp
+# Requires: https://github.com/lavoiesl/osx-cpu-temp, https://www.eidac.de/?cat=40
 
 # uses osx-cpu-temp to return the current temperature
 getCurrentTemp()
