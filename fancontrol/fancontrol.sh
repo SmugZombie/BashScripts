@@ -1,5 +1,5 @@
 #!/bin/bash
-# fancontrol.sh v0.2
+# fancontrol.sh v0.3
 # github.com/smugzombie
 # To be run via minute cron to update the laptops fan speed if not functioning properly on its own
 # Requires: https://github.com/lavoiesl/osx-cpu-temp, https://www.eidac.de/?cat=40
@@ -17,6 +17,7 @@ getCurrentTemp()
 changeFanSpeed()
 {
 	/Applications/smcFanControl.app/Contents/Resources/smc -k F0Mn -w "$1"e0
+	/Applications/smcFanControl.app/Contents/Resources/smc -k F1Mn -w "$1"e0
 }
 
 # Get the current Temperature
